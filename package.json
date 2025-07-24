@@ -15,6 +15,7 @@
     "@react-three/fiber": "^8.15.11",
     "@react-three/drei": "^9.88.13",
     "three": "^0.158.0",
+    "three-stdlib": "^2.28.9",
     "lucide-react": "^0.263.1",
     "clsx": "^2.0.0",
     "tailwind-merge": "^2.0.0"
