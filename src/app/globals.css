@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #111827;
+  color: white;
+}
+
+/* Ensure full height for Next.js root elements */
+#__next {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Custom scrollbar for file manager */
+.file-manager-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.file-manager-scroll::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.file-manager-scroll::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 2px;
+}
+
+.file-manager-scroll::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* Ensure Three.js canvas doesn't interfere with layout */
+canvas {
+  outline: none;
+  touch-action: none;
+}
+
+/* Smooth transitions for interactive elements */
+button, .interactive {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Loading state styles */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.loading::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid #374151;
+  border-top: 2px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Utility classes for the viewer */
+.viewer-overlay {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Hide default file input styling */
+input[type="file"] {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .file-manager {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .file-manager {
+    width: 240px;
+  }
+  
+  .app-header h1 {
+    font-size: 1rem;
+  }
+}
+
+/* Ensure proper spacing and alignment */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-shadow {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Grid animation for the 3D viewer background */
+@keyframes grid-fade {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.3; }
+}
+
+.grid-animated {
+  animation: grid-fade 4s ease-in-out infinite;
+}
